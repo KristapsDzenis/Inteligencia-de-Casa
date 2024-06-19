@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- change these links to Flask function links when adding Flask code -->
+        <link href="{{ url_for('serve_css_frame') }}" rel="stylesheet" type="text/css">
+        <link href="Fridge.css" rel="stylesheet" type="text/css"> <!-- individual page css file link goes here -->
+        <link href="{{url_for('Tserve_css_temp')}}" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inteligencia de Casa</title>
+    </head>
+
+    <body>
+        <div id="container">
+
+            <!-- header -->
+            <div id="header">
+
+                <div id="logo">
+                    <img class="logo" src="logo.png" alt="Logo"/><!-- change src to Flask function link when adding Flask code -->
+                </div>
+
+                <div id="title">
+                    <h1>Inteligencia de Casa</h1>
+                </div>
+
+                <div id="reload">
+                    <form action='/troyreload'>
+                    <button class="header_btn button" type="submit">&#8635</button>
+                    </form>
+                </div>
+
+                <!-- change reload button code to Flask code when adding Flask -->
+                
+
+                <div id="dropdown_menu">
+                    <button class="header_btn button" onclick="menu()">≣</button>
+                </div>
+
+                <!-- add your page links here and update to Flask code, same link as your reload button link -->
+                <div id="dropdown_field">
+                    <div id="link_1">
+                        <a target="_self" class="page_links" href="{{ url_for('reload') }}">Heating</a>
+                    </div>
+
+                    <div id="link_2">
+                        <a target="_self" class="page_links" href="{{url_for('mreload')}}">Motion sensors</a>
+                    </div>
+
+                    <div id="link_3">
+                        <a target="_self" class="page_links" href="{{url_for('creload')}}">Cameras</a>
+                    </div>
+
+                    <div id="link_4">
+                        <a target="_self" class="page_links" href="{{url_for('update_map')}}">Chip</a>
+                    </div>
+
+                    <div id="link_5">
+                        <a target="_self" class="page_links" href="{{url_for('lockreload')}}">Door Lock</a>
+                    </div>
+
+                    <div id="link_6">
+                        <a class="page_links" href="{{url_for('troyreload')}}">Fridge</a>
+                    </div>
+                   
+                </div>
+
+            </div>
+<!-- MAIN PAGE CONTENTS GOES HERE -->
+<div id="middle">
+    <div class="fridge">
+        <h2>Fridge</h2>
+        <div class="fridge-data">
+            <p><strong>Humidity:</strong> {{ humidity }}</p>
+            <p><strong>Door Status:</strong> {% if status == 0 %} Closed {% else %} Open {% endif %}</p>
+            <p><strong>Temperature:</strong> {{ temperature }}</p>
+            <p><strong>fridgeid:</strong> {{ fridgeid}}</p>
+        </div>
+    </div>
+</div>
+
+
+            <!-- footer -->
+            <div id="footer">
+
+                <div id="team_name">
+                    <p class="team">Team: DBRBMA_CSA</p>
+                </div>
+
+                <div id="team_members">
+                    <p class="members">Team members: Kristaps Dzenis, Zeyd Ajraou, Stefan Barbu, Troy Muyobo, Milo  Byrnes,
+                        Aymen Rashee</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            function menu(){
+
+                document.getElementById("dropdown_field").style.display = 'block';
+
+            }
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.header_btn')) {
+
+                    document.getElementById("dropdown_field").style.display = 'none';
+
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
+<!-- end of code -->

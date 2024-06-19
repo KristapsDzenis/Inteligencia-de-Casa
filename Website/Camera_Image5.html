@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link  href="{{ url_for('serve_css_frame') }}" rel="stylesheet" type="text/css">
+        <link  href="{{url_for('cserve_css_temp')}}" rel="stylesheet" type="text/css"> <!-- individual page css file link goes here -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image</title>
+        <style>
+            .container {
+                width: 50%; /* Adjust the width as needed */
+                margin: 0 auto; /* Center the container horizontally */
+            }
+        
+            img {
+                max-width: 100%; /* Ensure the image does not exceed its container's width */
+                height: auto; /* Maintain the image's aspect ratio */
+                display: block; /* Ensure the image is treated as a block element */
+                margin: 0 auto; /* Center the image horizontally */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+
+            <!-- header -->
+            <div id="header">
+
+                <div id="logo">
+                    <a href="temp_sensors.html">
+                        <img class="logo" src="logo.png" alt="Logo"/>
+                    </a>
+                </div>
+
+                <div id="title">
+                    <h1>Inteligencia de Casa</h1>
+                </div>
+
+                <div id="reload">
+                    <form action="/creload">
+                        <button class="header_btn button" type="submit">&#8635</button>
+                    </form>
+                </div>
+
+                <div id="dropdown_menu">
+                    <button class="header_btn button" onclick="menu()">≣</button>
+                </div>
+
+                <div id="dropdown_field">
+
+                    <div id="link_1">
+                        <a target="_self" class="page_links" href="{{ url_for('reload') }}">Temperature sensors</a>
+                    </div>
+
+                    <div id="link_2">
+                        <a target="_self" class="page_links" href="{{url_for('mreload')}}">Motion sensors</a>
+                    </div>
+
+                    <div id="link_3">
+                        <a target="_self" class="page_links" href="{{url_for('creload')}}">Cameras</a>
+                    </div>
+
+                     <div id="link_4">
+                        <a target="_self" class="page_links" href="{{url_for('update_map')}}">Chip</a>
+                    </div>
+
+                    <div id="link_5">
+                        <a target="_self" class="page_links" href="{{url_for('lockreload')}}">Door Lock</a>
+                    </div>
+
+                    <div id="link_6">
+                        <a class="page_links" href="{{url_for('troyreload')}}">Fridge</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- MAIN PAGE CONTENTS GOES HERE -->
+            <div id="middle">
+                <p>Upstairs :</p>
+                <img src="Website/Camera5.jpeg" alt="Image">
+            </div>
+
+            <!-- footer -->
+            <div id="footer">
+
+                <div id="team_name">
+                    <p class="team">Team: DBRBMA_CSA</p>
+                </div>
+
+                <div id="team_members">
+                    <p class="members">Team members: Kristaps Dzenis, Zeyd Ajraou, Stefan Barbu, Troy Muyobo, Milo  Byrnes,
+                        Aymen Rasheed</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+ 
+
+            function menu(){
+
+                document.getElementById("dropdown_field").style.display = 'block';
+
+            }
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.header_btn')) {
+
+                    document.getElementById("dropdown_field").style.display = 'none';
+
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
+<!-- end of code -->

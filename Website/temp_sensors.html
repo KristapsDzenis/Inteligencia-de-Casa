@@ -1,0 +1,214 @@
+<!-- CONVERTED TO RUN WITH FLASK, RUN IT FROM EXEC_ALL.PY  -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="{{ url_for('serve_css_frame') }}" rel="stylesheet" type="text/css">
+        <link href="{{url_for('serve_css_temp')}}" rel="stylesheet" type="text/css"> <!-- individual page css file link goes here -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inteligencia de Casa</title>
+    </head>
+
+    <body>
+        <div id="container">
+
+            <!-- header -->
+            <div id="header">
+
+                <div id="logo">
+                    <img class="logo" src="{{ url_for('serve_logo') }}" alt="Logo"/>
+                </div>
+
+                <div id="title">
+                    <h1>Inteligencia de Casa</h1>
+                </div>
+
+                <div id="reload">
+                    <form action="/reload">
+                    <button class="header_btn button" type="submit">&#8635</button>
+                    </form>
+                </div>
+
+                <div id="dropdown_menu">
+                    <button class="header_btn button" onclick="menu()">≣</button>
+                </div>
+
+                <div id="dropdown_field">
+
+                    <div id="link_1">
+                        <a target="_self" class="page_links" href="{{ url_for('reload') }}">Heating</a>
+                    </div>
+
+                    <div id="link_2">
+                        <a target="_self" class="page_links" href="{{url_for('mreload')}}">Motion sensors</a>
+                    </div>
+
+                    <div id="link_3">
+                        <a target="_self" class="page_links" href="{{url_for('creload')}}">Cameras</a>
+                    </div>
+
+                    <div id="link_4">
+                        <a target="_self" class="page_links" href="{{url_for('update_map')}}">Chip</a>
+                    </div>
+
+                    <div id="link_5">
+                        <a target="_self" class="page_links" href="{{url_for('lockreload')}}">Door Lock</a>
+                    </div>
+
+                    <div id="link_6">
+                        <a class="page_links" href="{{url_for('troyreload')}}">Fridge</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- MAIN PAGE CONTENTS GOES HERE -->
+            <div id="middle">
+
+                <div id="middle_title">
+                   <h2>Heating</h2>
+                </div>
+
+                <div id="wrapper">
+
+                    <div id="meter_1">
+
+                        <div id="location_1"><p class="meter_text">{{location_1}}</p></div>
+
+                        <div id="time_1"><p class="meter_text">{{time_1}}</p></div>
+
+                        <div id="temperature_1"><p class="meter_text">{{temperature_1}}   C</p></div>
+
+                        <div id="heater_1"><p class="meter_text">{{heater_1}}</p></div>
+
+                    </div>
+
+                    <div id="meter_2">
+
+                        <div id="location_2"><p class="meter_text">{{location_2}}</p></div>
+
+                        <div id="time_2"><p class="meter_text">{{time_2}}</p></div>
+
+                        <div id="temperature_2"><p class="meter_text">{{temperature_2}}   C</p></div>
+
+                        <div id="heater_2"><p class="meter_text">{{heater_2}}</p></div>
+
+                    </div>
+
+                    <div id="meter_3">
+
+                        <div id="location_3"><p class="meter_text">{{location_3}}</p></div>
+
+                        <div id="time_3"><p class="meter_text">{{time_3}}</p></div>
+
+                        <div id="temperature_3"><p class="meter_text">{{temperature_3}}   C</p></div>
+
+                        <div id="heater_3"><p class="meter_text">{{heater_3}}</p></div>
+
+                    </div>
+
+                    <div id="meter_4">
+
+                        <div id="location_4"><p class="meter_text">{{location_4}}</p></div>
+
+                        <div id="time_4"><p class="meter_text">{{time_4}}</p></div>
+
+                        <div id="temperature_4"><p class="meter_text">{{temperature_4}}   C</p></div>
+
+                        <div id="heater_4"><p class="meter_text">{{heater_4}}</p></div>
+
+                    </div>
+
+                    <div id="meter_5">
+
+                        <div id="location_5"><p class="meter_text">{{location_5}}</p></div>
+
+                        <div id="time_5"><p class="meter_text">{{time_5}}</p></div>
+
+                        <div id="temperature_5"><p class="meter_text">{{temperature_5}}   C</p></div>
+
+                        <div id="heater_5"><p class="meter_text">{{heater_5}}</p></div>
+
+                    </div>
+
+                    <div id="meter_6">
+
+                        <div id="location_6"><p class="meter_text">{{location_6}}</p></div>
+
+                        <div id="time_6"><p class="meter_text">{{time_6}}</p></div>
+
+                        <div id="temperature_6"><p class="meter_text">{{temperature_6}}   C</p></div>
+
+                        <div id="heater_6"><p class="meter_text">{{heater_6}}</p></div>
+
+                    </div>
+
+                    <div id="meter_7">
+
+                        <div id="location_7"><p class="meter_text">{{location_7}}</p></div>
+
+                        <div id="time_7"><p class="meter_text">{{time_7}}</p></div>
+
+                        <div id="temperature_7"><p class="meter_text">{{temperature_7}}   C</p></div>
+
+                        <div id="heater_7"><p class="meter_text">{{heater_7}}</p></div>
+
+                    </div>
+
+                </div>
+
+                <div id="change_limit">
+                    {% if error %}
+                        <p style="color: red;">{{ error }}</p>
+                    {% endif %}
+                    <form action="/change_temp" method="post">
+                        <div class="input-group">
+                            <label for="max_temp">Max temperature:<input type="text" id="max_temp" name="max_temp" required></label>
+                        </div>
+                        <div class="input-group">
+                            <label for="min_temp">Min temperature:<input type="text" id="min_temp" name="min_temp" required></label>
+
+                        </div>
+                        <button class="btn" type="submit">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- footer -->
+            <div id="footer">
+
+                <div id="team_name">
+                    <p class="team">Team: DBRBMA_CSA</p>
+                </div>
+
+                <div id="team_members">
+                    <p class="members">Team members: Kristaps Dzenis, Zeyd Ajraou, Stefan Barbu, Troy Muyobo, Milo  Byrnes,
+                        Aymen Rashee</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            function menu(){
+
+                document.getElementById("dropdown_field").style.display = 'block';
+
+            }
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.header_btn')) {
+
+                    document.getElementById("dropdown_field").style.display = 'none';
+
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
+<!-- end of code -->

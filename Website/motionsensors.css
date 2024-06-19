@@ -1,0 +1,41 @@
+/* THIS FILE IS FOR MOTION SENSORS PAGE */
+
+#container
+{
+    height: 860px;
+}
+#middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#middle > div {
+    border: 2px solid #000;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+}
+
+#middle .meter_text {
+    margin: 0;
+}
+
+#middle #meter_1,
+#middle #meter_2,
+#middle #meter_3,
+#middle #meter_4,
+#middle #meter_5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#middle
+{
+    height: 660px;
+}
+
+#footer
+{
+    top: 660px;
+}

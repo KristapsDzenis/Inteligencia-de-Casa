@@ -1,0 +1,551 @@
+/* THIS FILE IS FOR TEMP_SENSORS && HEATERS PAGE */
+
+#container
+{
+    height: 860px;
+}
+
+#middle
+{
+    height: 660px;
+}
+
+#footer
+{
+    top: 660px;
+}
+
+@font-face
+    {
+        font-family: MeterFont;
+        src: url(digital.ttf);
+    }
+
+@font-face
+    {
+        font-family: PageTitleFont;
+        src: url(Heat.ttf);
+    }
+
+#middle_title
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 32%;
+    top: 5%;
+    width: 140px;
+    height: 50px;
+}
+
+h2
+{
+    margin-top: -9%;
+    padding: 0;
+    font-size: 50px;
+    letter-spacing: 0.1px;
+    font-family: PageTitleFont;
+    font-weight: bold;
+    color: #ce3b00;
+}
+
+#wrapper
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 18%;
+    width: 100%;
+    height: 315px;
+    background: #55a2f6;
+}
+
+#meter_1
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 2%;
+    top: 2%;
+    width: 348px;
+    height: 35px;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-color: #969696;
+}
+
+#location_1
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 1%;
+    top: 12%;
+    width: 43%;
+    height: 70%;
+    background: #000000;
+}
+
+#time_1
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 29.3%;
+    top: 12%;
+    width: 25%;
+    height: 70%;
+    background: #000000;
+}
+
+#temperature_1
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 12.3%;
+    top: 12%;
+    width: 16%;
+    height: 70%;
+    background: #000000;
+}
+
+#heater_1
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 1%;
+    top: 12%;
+    width: 10%;
+    height: 70%;
+    background: #000000;
+}
+
+#meter_2
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 2%;
+    top: 16%;
+    width: 348px;
+    height: 35px;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-color: #969696;
+}
+
+#location_2
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 1%;
+    top: 12%;
+    width: 43%;
+    height: 70%;
+    background: #000000;
+}
+
+#time_2
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 29.3%;
+    top: 12%;
+    width: 25%;
+    height: 70%;
+    background: #000000;
+}
+
+#temperature_2
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 12.3%;
+    top: 12%;
+    width: 16%;
+    height: 70%;
+    background: #000000;
+}
+
+#heater_2
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 1%;
+    top: 12%;
+    width: 10%;
+    height: 70%;
+    background: #000000;
+}
+
+#meter_3
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 2%;
+    top: 30%;
+    width: 348px;
+    height: 35px;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-color: #969696;
+}
+
+#location_3
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 1%;
+    top: 12%;
+    width: 43%;
+    height: 70%;
+    background: #000000;
+}
+
+#time_3
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 29.3%;
+    top: 12%;
+    width: 25%;
+    height: 70%;
+    background: #000000;
+}
+
+#temperature_3
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 12.3%;
+    top: 12%;
+    width: 16%;
+    height: 70%;
+    background: #000000;
+}
+
+#heater_3
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 1%;
+    top: 12%;
+    width: 10%;
+    height: 70%;
+    background: #000000;
+}
+
+#meter_4
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 2%;
+    top: 44%;
+    width: 348px;
+    height: 35px;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-color: #969696;
+}
+
+#location_4
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 1%;
+    top: 12%;
+    width: 43%;
+    height: 70%;
+    background: #000000;
+}
+
+#time_4
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 29.3%;
+    top: 12%;
+    width: 25%;
+    height: 70%;
+    background: #000000;
+}
+
+#temperature_4
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 12.3%;
+    top: 12%;
+    width: 16%;
+    height: 70%;
+    background: #000000;
+}
+
+#heater_4
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 1%;
+    top: 12%;
+    width: 10%;
+    height: 70%;
+    background: #000000;
+}
+
+#meter_5
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 2%;
+    top: 58%;
+    width: 348px;
+    height: 35px;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-color: #969696;
+}
+
+#location_5
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 1%;
+    top: 12%;
+    width: 43%;
+    height: 70%;
+    background: #000000;
+}
+
+#time_5
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 29.3%;
+    top: 12%;
+    width: 25%;
+    height: 70%;
+    background: #000000;
+}
+
+#temperature_5
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 12.3%;
+    top: 12%;
+    width: 16%;
+    height: 70%;
+    background: #000000;
+}
+
+#heater_5
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 1%;
+    top: 12%;
+    width: 10%;
+    height: 70%;
+    background: #000000;
+}
+
+#meter_6
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 2%;
+    top: 72%;
+    width: 348px;
+    height: 35px;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-color: #969696;
+}
+
+#location_6
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 1%;
+    top: 12%;
+    width: 43%;
+    height: 70%;
+    background: #000000;
+}
+
+#time_6
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 29.3%;
+    top: 12%;
+    width: 25%;
+    height: 70%;
+    background: #000000;
+}
+
+#temperature_6
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 12.3%;
+    top: 12%;
+    width: 16%;
+    height: 70%;
+    background: #000000;
+}
+
+#heater_6
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 1%;
+    top: 12%;
+    width: 10%;
+    height: 70%;
+    background: #000000;
+}
+
+#meter_7
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 2%;
+    top: 86%;
+    width: 348px;
+    height: 35px;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-color: #969696;
+}
+
+#location_7
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 1%;
+    top: 12%;
+    width: 43%;
+    height: 70%;
+    background: #000000;
+}
+
+#time_7
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 29.3%;
+    top: 12%;
+    width: 25%;
+    height: 70%;
+    background: #000000;
+}
+
+#temperature_7
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 12.3%;
+    top: 12%;
+    width: 16%;
+    height: 70%;
+    background: #000000;
+}
+
+#heater_7
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 1%;
+    top: 12%;
+    width: 10%;
+    height: 70%;
+    background: #000000;
+}
+
+.meter_text
+{
+    font-family: MeterFont;
+    margin: 2%;
+    padding: 0;
+    font-size: 20px;
+    color: #66c500;
+}
+
+#change_limit
+{
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    bottom: 3%;
+    left: 20%;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #55a2f6;
+    border-radius: 5px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+  }
+
+.input-group label {
+    display: block;
+  }
+
+.input-group input {
+    width: 15%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 30px
+  }
+
+.btn {
+    position: absolute;
+    width: 50%;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    left: 23%;
+    bottom: 12%;
+  }
+
+.btn:hover {
+    background-color: #0056b3;
+  }

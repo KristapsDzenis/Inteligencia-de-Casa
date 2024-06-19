@@ -1,0 +1,30 @@
+#container
+{
+    height: 860px;
+}
+
+#middle
+{
+    height: 660px;
+}
+
+#footer
+{
+    top: 660px;
+}
+
+.fridge {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.fridge h2 {
+    margin-bottom: 10px;
+}
+
+.fridge-data p {
+    margin: 5px 0;
+}

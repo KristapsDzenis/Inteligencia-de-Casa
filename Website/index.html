@@ -1,0 +1,79 @@
+<!-- index.html -->
+<!-- CONVERTED TO RUN WITH FLASK, RUN IT FROM EXEC_ALL.PY  -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <!--<link rel="stylesheet" href="style.css">-->
+        <link rel="stylesheet" href="{{url_for('serve_css_style')}}"  type="text/css">
+    </head>
+    <body>
+
+        <div class="container">
+        <h2>Login</h2>
+        <!--<form>
+            <div class="input-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" class="btn" onclick="login()">Login</button>
+        </form>-->
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            <form action="/login" method="post">
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required><br><br>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+                </div>
+                <button class="btn" type="submit">Login</button>
+            </form>
+
+            <div id="login-details">
+                <p class="user">Login details:</p>
+                <p class="user"> Username: admin    Password: qwerty</p>
+                <p class="user"> Username: test     Password: password</p>
+            </div>
+
+        </div>
+
+
+        <!--<script>
+            function login() {
+                var log_array = ["admin", "qwerty", "test", "lol"];
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                var authenticated = false;
+
+                for (var i = 0; i < log_array.length; i += 2) {
+                    if (username === log_array[i] && password === log_array[i + 1]) {
+                        authenticated = true;
+                        break;
+                    }
+                }
+
+                if (authenticated) {
+                    // Redirect to home page upon successful login
+                    window.location.href = "http://localhost:5000/Website/temp_sensors.html";
+                }
+                else {
+                    alert("Invalid username or password");
+                }
+
+                // Prevent form submission
+                return false;
+            }
+        </script>-->
+
+    </body>
+</html>

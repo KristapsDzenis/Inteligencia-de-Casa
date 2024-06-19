@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link  href="{{ url_for('serve_css_frame') }}" rel="stylesheet" type="text/css">
+        <link  href="{{url_for('cserve_css_temp')}}" rel="stylesheet" type="text/css"> <!-- individual page css file link goes here -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inteligencia de Casa</title>
+    </head>
+
+    <body>
+        <div id="container">
+
+            <!-- header -->
+            <div id="header">
+
+                <div id="logo">
+                    <a href="temp_sensors.html">
+                        <img class="logo" src="logo.png" alt="Logo"/>
+                    </a>
+                </div>
+
+                <div id="title">
+                    <h1>Inteligencia de Casa</h1>
+                </div>
+
+                <div id="reload">
+                    <form action="/creload">
+                        <button class="header_btn button" type="submit">&#8635</button>
+                    </form>
+                </div>
+
+                <div id="dropdown_menu">
+                    <button class="header_btn button" onclick="menu()">≣</button>
+                </div>
+
+                <div id="dropdown_field">
+
+                    <div id="link_1">
+                        <a target="_self" class="page_links" href="{{ url_for('reload') }}">Heating</a>
+                    </div>
+
+                    <div id="link_2">
+                        <a target="_self" class="page_links" href="{{url_for('mreload')}}">Motion sensors</a>
+                    </div>
+
+                    <div id="link_3">
+                        <a target="_self" class="page_links" href="{{url_for('creload')}}">Cameras</a>
+                    </div>
+
+                    <div id="link_4">
+                        <a target="_self" class="page_links" href="{{url_for('update_map')}}">Chip</a>
+                    </div>
+
+                    <div id="link_5">
+                        <a target="_self" class="page_links" href="{{url_for('lockreload')}}">Door Lock</a>
+                    </div>
+
+                    <div id="link_6">
+                        <a class="page_links" href="{{url_for('troyreload')}}">Fridge</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- MAIN PAGE CONTENTS GOES HERE -->
+            <div id="middle">
+
+                <div id="middle_title">
+                    <h2>Cameras</h2>
+                 </div>
+
+                <div id="meter_1">
+                    <div id="clocation_1"><p class="meter_text">{{clocation_1}}</p></div>
+                    <div id="cdate_1"><p class="meter_text">{{cdate_1}}</p></div>
+                    <div id="ctime_1"><p class="meter_text">{{ctime_1}}</p></div>
+                    <div id="cbutton_1">
+                        <a class="image_but button1" href="{{ url_for('open_img1') }}">Image</a>
+                    </div>
+                </div>
+
+
+                <div id="meter_2">
+                    <div id="clocation_2"><p class="meter_text">{{clocation_2}}</p></div>
+                    <div id="cdate_2"><p class="meter_text">{{cdate_2}}</p></div>
+                    <div id="ctime_2"><p class="meter_text">{{ctime_2}}</p></div>
+                    <div id="cbutton_2">
+                        <a class="image_but button1" href="{{ url_for('open_img2') }}">Image</a>
+                    </div>
+                </div>
+
+
+                <div id="meter_3">
+                    <div id="clocation_3"><p class="meter_text">{{clocation_3}}</p></div>
+                    <div id="cdate_3"><p class="meter_text">{{cdate_3}}</p></div>
+                    <div id="ctime_3"><p class="meter_text">{{ctime_3}}</p></div>
+                    <div id="cbutton_3">
+                        <a class="image_but button1" href="{{ url_for('open_img3') }}">Image</a>
+                    </div>
+                </div>
+
+                <div id="meter_4">
+                    <div id="clocation_4"><p class="meter_text">{{clocation_4}}</p></div>
+                    <div id="cdate_4"><p class="meter_text">{{cdate_4}}</p></div>
+                    <div id="ctime_4"><p class="meter_text">{{ctime_4}}</p></div>
+                    <div id="cbutton_4">
+                        <a class="image_but button1" href="{{ url_for('open_img4') }}">Image</a>
+                    </div>
+                </div>
+
+                <div id="meter_5">
+                    <div id="clocation_5"><p class="meter_text">{{clocation_5}}</p></div>
+                    <div id="cdate_5"><p class="meter_text">{{cdate_5}}</p></div>
+                    <div id="ctime_5"><p class="meter_text">{{ctime_5}}</p></div>
+                    <div id="cbutton_5">
+                        <a class="image_but button1" href="{{ url_for('open_img5') }}">Image</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div id="footer">
+
+                <div id="team_name">
+                    <p class="team">Team: DBRBMA_CSA</p>
+                </div>
+
+                <div id="team_members">
+                    <p class="members">Team members: Kristaps Dzenis, Zeyd Ajraou, Stefan Barbu, Troy Muyobo, Milo  Byrnes,
+                        Aymen Rasheed</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+
+            function navigateToPage(location) {
+                switch(location) {
+                    case "Home_Front":
+                        window.location.href = "Camera_Image1.html";
+                        break;
+                    case "Home_Back":
+                        window.location.href = "Camera_Image2.html";
+                        break;
+                    case "Driveway":
+                        window.location.href = "Camera_Image3.html";
+                        break;
+                    case "Entrance":
+                        window.location.href = "Camera_Image4.html";
+                        break;
+                    case "Upstairs":
+                        window.location.href = "Camera_Image5.html";
+                        break;
+                    default:
+                        console.error("Invalid location: " + location);
+                }
+            }
+
+            function menu(){
+
+                document.getElementById("dropdown_field").style.display = 'block';
+
+            }
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.header_btn')) {
+
+                    document.getElementById("dropdown_field").style.display = 'none';
+
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
+<!-- end of code -->
