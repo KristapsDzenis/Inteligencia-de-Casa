@@ -1,6 +1,8 @@
 # 1st Year University Group Project
 
 MQTT protocol project produced by 6 member 1st year university student team in 6 weeks period
+
+
 To run the project, follow these steps:
 
 	1: Run the exec_all.py file
