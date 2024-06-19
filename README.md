@@ -1,5 +1,6 @@
-# IDC MQTT project
+# 1st Year University Group Project
 
+MQTT protocol project produced by 6 member 1st year university student team in 6 weeks period
 To run the project, follow these steps:
 
 	1: Run the exec_all.py file
@@ -10,6 +11,4 @@ To run the project, follow these steps:
 		webview --> pip install pywebview
 		flask --> pip install flask
 		
-Make sure the paho-mqtt library is 1.6.1 and NOT 2.0.0 otherwise the code will not run.
-
 Thank you all
